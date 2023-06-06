@@ -63,28 +63,26 @@
 			</plugin>
 			<!-- This plugin is used to create a docker image and publish the image to docker hub-->
 			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.7</version>
-				<configuration>
-					<!-- replace `callicoder` with your docker id-->
-					<repository>callicoder/spring-boot-websocket-chat-demo</repository>
-					<tag>${project.version}</tag>
-					<buildArgs>
-						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-					</buildArgs>
-				</configuration>
-				<executions>
-					<execution>
-						<id>default</id>
-						<phase>install</phase>
-						<goals>
-							<goal>build</goal>
-							<goal>push</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+  <groupId>com.spotify</groupId>
+  <artifactId>dockerfile-maven-plugin</artifactId>
+  <version>1.4.7</version>
+  <executions>
+    <execution>
+      <id>default</id>
+      <goals>
+        <goal>build</goal>
+        <goal>push</goal>
+      </goals>
+    </execution>
+  </executions>
+  <configuration>
+    <repository>callicoder/spring-boot-websocket-chat-demo</repository>
+    <tag>${project.version}</tag>
+    <buildArgs>
+      <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+    </buildArgs>
+  </configuration>
+</plugin>
 		</plugins>
 	</build>
 </project>
