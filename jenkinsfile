@@ -29,6 +29,7 @@ pipeline {
     }
     stage('Dockerbuild'){
            steps {
+               sh 'mvn clean install'
                sh 'docker build -t mary .'
       }
    }
