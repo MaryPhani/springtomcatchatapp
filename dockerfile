@@ -1,4 +1,4 @@
 FROM openjdk
 COPY target/*.jar application.jar
-EXPOSE 8090
+EXPOSE 8899
 ENTRYPOINT ["java","-jar","application.jar"]
