@@ -16,7 +16,7 @@ pipeline {
                 snykSecurity (
                     projectName: 'Snyk_security_tool', 
                     snykInstallation: 'snyk@latest', 
-                    snykTokenId: 'snyk_api',
+                    snykTokenId: 'organisation-snyk-api-token_1',
                     failOnIssues: false
                 )
             }
